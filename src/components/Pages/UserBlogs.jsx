@@ -70,9 +70,10 @@ const UserBlogs = ({ mode }) => {
 				<Box
 					sx={{
 						position: "fixed",
-						width: "68%",
+						width: "65%",
+						paddingLeft:'25px',
 						bottom: "530px",
-						left: "20px",
+						left: "30px",
 					}}>
 					<LinearProgress color='warning' />
 				</Box>

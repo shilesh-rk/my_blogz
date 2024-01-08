@@ -81,7 +81,7 @@ const UserProfileCard = ({ users, mode }) => {
 					</h2>
 					<h2>
 						<a href='#'>
-							<span>{loggedUser ? rand + rand - 3 : 0}</span>
+							<span>{localId ? rand + rand - 3 : 0}</span>
 							<small>Following</small>
 						</a>
 					</h2>
@@ -91,7 +91,7 @@ const UserProfileCard = ({ users, mode }) => {
 				</div>
 			</div>
 			<div className='desc' style={{ textAlign: "center" }}>
-				Number of blogs : {loggedUser ? loggedUser[0]?.blogs?.length : 0}
+				Number of blogs : {localId ? loggedUser[0]?.blogs?.length : 0}
 			</div>
 		</div>
 	);

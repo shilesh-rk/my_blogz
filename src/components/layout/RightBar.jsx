@@ -6,7 +6,8 @@ import { authActions } from "../redux/store";
 import UserProfileCard from "./UserProfile";
 
 const RightBar = ({ mode }) => {
-	const [users, setUsers] = useState([]);
+	const [ users, setUsers ] = useState([]);
+	const localId = localStorage.getItem("BlogUserId");
 
 	const dispatch = useDispatch();
 
@@ -56,27 +57,27 @@ const RightBar = ({ mode }) => {
 					<AvatarGroup max={4}>
 						<Avatar
 							sx={{ backgroundColor: "#527853" }}
-							alt='S'
+							alt={localId&&'S'}
 							src='/static/images/avatar/1.jpg'
 						/>
 						<Avatar
 							sx={{ backgroundColor: "#F7B787" }}
-							alt='R'
+							alt={localId&&'R'}
 							src='/static/images/avatar/2.jpg'
 						/>
 						<Avatar
 							sx={{ backgroundColor: "#219C90" }}
-							alt='K'
+							alt={localId&&'K'}
 							src='/static/images/avatar/3.jpg'
 						/>
 						<Avatar
 							sx={{ backgroundColor: "#B4BDFF" }}
-							alt='A'
+							alt={localId&&'A'}
 							src='/static/images/avatar/4.jpg'
 						/>
 						<Avatar
 							sx={{ backgroundColor: "#B4BDFF" }}
-							alt='T'
+							alt={localId&&'T'}
 							src='/static/images/avatar/5.jpg'
 						/>
 					</AvatarGroup>
