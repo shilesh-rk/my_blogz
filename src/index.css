@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "roboto", serif;
+}
+
+
+/* External CSS styles for the component */
+
+:root {
+  --font-color: #404040;
+  --dp-size: 8rem;
+  --padding-size: 2rem;
+  --opener-size: 2.5rem;
+  --dot-size: 0.4rem;
+}
+
+/* @import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,700"); */
+
+
+.logo{
+  color: #f2f2f2;
+  font-size: 40px;
+  font-family: 'Bagel Fat One', system-ui;
+}
+.card {
+  /* background-color: white; */
+  width: 20%;
+  position: fixed;
+  top: 90px;
+  display: flex;
+  flex-direction: column;
+  /* overflow: hidden; */
+  border-radius: 2rem;
+  box-shadow: 0px 1rem 1.5rem rgba(0, 0, 0, 0.2);
+}
+
+.card .banner {
+  background-image: url(https://entail-assets.com/mayple/62a1ff71f520bb785087f5b4_topmarketingblogs1_19f178343592408234a94f70c4bb9ad2_2000-1699776190264.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.card .banner svg {
+  /* background-color: white; */
+  /* width: var(--dp-size); */
+  height: var(--dp-size);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  transform: translateY(50%);
+  transition: transform 200ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+.card .banner svg:hover {
+  transform: translateY(50%) scale(1.1);
+}
+
+.card .menu {
+  width: 100%;
+  height: 5.5rem;
+  padding: 1rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.card .menu .opener {
+  /* width: var(--opener-size); */
+  height: var(--opener-size);
+  position: relative;
+  border-radius: 50%;
+  transition: background-color 100ms ease-in-out;
+}
+
+.card .menu .opener:hover {
+  background-color: #f2f2f2;
+}
+
+.card .menu .opener span {
+  background-color: var(--font-color);
+  width: var(--dot-size);
+  height: var(--dot-size);
+  position: absolute;
+  top: 0;
+  left: calc(50% - var(--dot-size) / 2);
+  border-radius: 50%;
+}
+
+.card h2.name {
+  text-align: center;
+  padding: 0 var(--padding-size) 0.5rem;
+  margin: 0;
+}
+
+.card .title {
+  color: lighten(var(--font-color), 50%);
+  font-size: 0.85rem;
+  text-align: center;
+  padding: 0 var(--padding-size) 1.2rem;
+}
+
+.card .actions {
+  padding: 0 var(--padding-size) 1.2rem;
+  display: flex;
+  flex-direction: column;
+  order: 99;
+}
+
+.card .actions .follow-info {
+  padding: 0 0 1rem;
+  display: flex;
+}
+
+.card .actions .follow-info h2 {
+  text-align: center;
+  width: 50%;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.card .actions .follow-info a {
+  text-decoration: none;
+  padding: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.8rem;
+  transition: background-color 100ms ease-in-out;
+}
+
+.card .actions .follow-info span {
+  color: #1c9eff;
+  font-weight: bold;
+  transform-origin: bottom;
+  transform: scaleY(1.3);
+  transition: color 100ms ease-in-out;
+}
+
+.card .actions .follow-info small {
+  color: #afafaf;
+  font-size: 0.85rem;
+  font-weight: normal;
+}
+
+.card .actions .follow-info a:hover {
+  background-color: #f2f2f2;
+}
+
+.card .actions .follow-info span:hover {
+  color: #007ad6;
+}
+
+.card .actions .follow-btn button {
+  color: inherit;
+  font: inherit;
+  font-weight: bold;
+  background-color: #F69100;
+  width: 100%;
+  border: none;
+  padding: 1rem;
+  outline: none;
+  box-sizing: border-box;
+  border-radius: 1.5rem / 50%;
+  transition: background-color 100ms ease-in-out, transform 200ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+.card .actions .follow-btn button:hover {
+  background-color: #efb10a;
+  transform: scale(1.1);
+}
+
+.card .actions .follow-btn button:active {
+  background-color: #e8a200;
+  transform: scale(1);
+}
+
+.card .desc {
+  text-align: justify;
+  padding: 0 var(--padding-size) 2.5rem;
+  order: 100;
+}
