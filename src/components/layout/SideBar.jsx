@@ -14,14 +14,12 @@ import {
 	FormControlLabel,
 } from "@mui/material";
 import { Link } from "react-router-dom";
-import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import HomeIcon from "@mui/icons-material/Home";
 import StickyNote2Icon from "@mui/icons-material/StickyNote2";
 import NoteAddIcon from "@mui/icons-material/NoteAdd";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
 import LoginIcon from "@mui/icons-material/Login";
 import LogoutIcon from "@mui/icons-material/Logout";
-import SettingsSuggestIcon from "@mui/icons-material/SettingsSuggest";
 import Login from "../Login";
 import Register from "../Register";
 import CreatePost from '../Pages/CreatePost'

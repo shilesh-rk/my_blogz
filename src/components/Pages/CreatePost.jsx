@@ -24,7 +24,7 @@ import { useNavigate } from "react-router-dom";
 const StyledModal = styled(Dialog)`
 	display: flex;
 	align-items: center;
-	justify-content: center;
+	justify-content: start;
 `;
 
 const Transition = React.forwardRef(function Transition(props, ref) {
@@ -121,7 +121,7 @@ const CreatePost = ({ mode, dialog, setOpenDialog }) => {
 				</Typography>
 				<Divider />
 				{loading && (
-					<Box sx={{ position: "relative", width: "100%", top: "-250px" }}>
+					<Box sx={{ position: "relative", width: "50%", top: "20px" }}>
 						<LinearProgress color='warning' />
 					</Box>
 				)}

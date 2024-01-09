@@ -62,7 +62,7 @@ body {
 }
 
 .card .banner svg:hover {
-  transform: translateY(50%) scale(1.1);
+  transform: translateY(50%) scale(1.05);
 }
 
 .card .menu {
@@ -165,7 +165,7 @@ body {
   color: inherit;
   font: inherit;
   font-weight: bold;
-  background-color: #F69100;
+  /* background-color: #F69100; */
   width: 100%;
   border: none;
   padding: 1rem;
@@ -176,8 +176,8 @@ body {
 }
 
 .card .actions .follow-btn button:hover {
-  background-color: #efb10a;
-  transform: scale(1.1);
+  color: #efb10a;
+  transform: scale(1.03);
 }
 
 .card .actions .follow-btn button:active {

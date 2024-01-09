@@ -7,7 +7,7 @@ import UserProfileCard from "./UserProfile";
 
 const RightBar = ({ mode }) => {
 	const [ users, setUsers ] = useState([]);
-	const localId = localStorage.getItem("BlogUserId");
+	const localId = localStorage.getItem("BlogUserId")||false;
 
 	const dispatch = useDispatch();
 
@@ -27,7 +27,7 @@ const RightBar = ({ mode }) => {
 
 	useEffect(() => {
 		getUsers();
-	}, []);
+	}, [localId]);
 
 	const rightDetails = () => <UserProfileCard users={users} mode={mode} />;
 

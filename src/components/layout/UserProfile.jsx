@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import toast from "react-hot-toast";
 
-const UserProfileCard = ({ users, mode }) => {
+const UserProfileCard = React.memo(({ users, mode }) => {
 	const localId = localStorage.getItem("BlogUserId");
 
 	let loggedUser;
@@ -24,6 +24,9 @@ const UserProfileCard = ({ users, mode }) => {
 	const min = 74;
 	const max = 297;
 	let rand = Math.floor(min + Math.random() * (max - min + 1));
+	useEffect(() => {
+		
+	},[localId])
 
 	return (
 		<div className='card'>
@@ -66,7 +69,7 @@ const UserProfileCard = ({ users, mode }) => {
 			</div>
 			<div className='menu'></div>
 			<h2 className='name'>
-				{loggedUser ? loggedUser[0]?.username : "@username"}
+				{loggedUser ? loggedUser[0]?.username.toUpperCase() : "@username"}
 			</h2>
 			<div className='title'>
 				{loggedUser ? loggedUser[0]?.email : "xxxxxxxxx"}
@@ -86,8 +89,17 @@ const UserProfileCard = ({ users, mode }) => {
 						</a>
 					</h2>
 				</div>
-				<div className='follow-btn' onClick={handleLogout}>
-					<button style={{ color: "white" }}>Logout</button>
+				<div
+					className='follow-btn'
+					onClick={handleLogout}
+					>
+					<button
+						style={{
+							color: "white",
+							backgroundColor: mode === "light" ? "#F69100" : "gray",
+						}}>
+						Logout
+					</button>
 				</div>
 			</div>
 			<div className='desc' style={{ textAlign: "center" }}>
@@ -95,6 +107,6 @@ const UserProfileCard = ({ users, mode }) => {
 			</div>
 		</div>
 	);
-};
+});
 
 export default UserProfileCard;

@@ -67,7 +67,7 @@ const Register = ({ dialog, setOpenDialog, mode }) => {
 		<>
 			<StyledModal
 				display='flex'
-				justifyContent='center'
+				justifyContent='Start'
 				alignItems='center'
 				open={dialog}
 				onClose={() => setOpenDialog(false)}

@@ -57,7 +57,7 @@ const Login = ({ openLogin, setOpenLogin, mode, dialog, setOpenDialog }) => {
 				localStorage.setItem("BlogUserId", data?.user._id);
 				dispatch(authActions.login(data?.user));
 				toast.success("User login Successfully", { position: "top-center" });
-				userData ? setOpenLogin(false) : setOpenDialog(false);
+				userData ? setOpenLogin : setOpenDialog(false);
 				window.location.reload();
 				setDone(true);
 			} else {

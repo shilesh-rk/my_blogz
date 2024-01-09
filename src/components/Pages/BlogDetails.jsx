@@ -57,7 +57,7 @@ const BlogDetails = () => {
 			});
 			if (data?.success) {
 				toast.success("Blog Updated Successfully");
-				navigate("/my-blogs");
+				navigate("/");
 			}
 		} catch (error) {
 			toast.error("Updating Failed");

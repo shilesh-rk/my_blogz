@@ -7,20 +7,19 @@ import { Box, LinearProgress, Typography } from "@mui/material";
 import { authActions } from "../redux/store";
 import toast from "react-hot-toast";
 
-const UserBlogs = ({ mode }) => {
+const UserBlogs = React.memo(({ mode }) => {
 	const [userBlogs, setUserBlogs] = useState([]);
 	const [userDetails, setUserDetails] = useState({});
 	const loading = useSelector((state) => state.loading);
 	const isLogin = localStorage.getItem("BlogUserId") || false;
-	const navigate = useNavigate();
 	const dispatch = useDispatch();
 
 	// get user blogs
 	const getUserBlogs = async () => {
 		try {
 			dispatch(authActions.setLoading(true));
-			const id = localStorage.getItem("BlogUserId");
-			const { data } = await api.get(`/user/user-blog/${id}`);
+			// const id = localStorage.getItem("BlogUserId");
+			const { data } = await api.get(`/user/user-blog/${isLogin}`);
 			if (data?.success) {
 				setUserBlogs(data?.userBlog);
 				setUserDetails({
@@ -36,8 +35,11 @@ const UserBlogs = ({ mode }) => {
 	};
 
 	useEffect(() => {
-		getUserBlogs();
-	}, [isLogin]);
+		if (isLogin) {
+			// Only make the API call if isLogin has changed
+			getUserBlogs();
+		}
+	}, [isLogin]); // Re-run the effect only when isLogin (localStorage) changes
 
 	return (
 		<Box
@@ -55,7 +57,7 @@ const UserBlogs = ({ mode }) => {
 						display: "flex",
 						flexDirection: "column",
 						alignItems: "center",
-						justifyContent: "center",
+						justifyContent: "start",
 						position: "fixed",
 						color: "#303030",
 					}}>
@@ -69,11 +71,9 @@ const UserBlogs = ({ mode }) => {
 			{loading ? (
 				<Box
 					sx={{
-						position: "fixed",
-						width: "65%",
-						paddingLeft:'25px',
-						bottom: "530px",
-						left: "30px",
+						position: 'relative',
+						top:'20px',
+						width: "50%",
 					}}>
 					<LinearProgress color='warning' />
 				</Box>
@@ -96,6 +96,6 @@ const UserBlogs = ({ mode }) => {
 			) : null}
 		</Box>
 	);
-};
+});
 
 export default UserBlogs;
