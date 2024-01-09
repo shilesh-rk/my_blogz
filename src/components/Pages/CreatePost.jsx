@@ -24,7 +24,7 @@ import { useNavigate } from "react-router-dom";
 const StyledModal = styled(Dialog)`
 	display: flex;
 	align-items: center;
-	justify-content: start;
+	justify-content: center;
 `;
 
 const Transition = React.forwardRef(function Transition(props, ref) {
